@@ -3,15 +3,25 @@
         {
             "name": "Linux",
             "includePath": [
-                "/lib/modules/6.11.0-24-generic/build/include",
-                "/lib/modules/6.11.0-24-generic/build/arch/x86/include", // Adjust for your architecture
-                "/usr/include"
+                "${workspaceFolder}/**",
+                "/usr/src/linux-headers-6.11.0-24-generic/include",
+                "/usr/src/linux-headers-6.11.0-24-generic/arch/x86/include",
+                "/usr/src/linux-headers-6.11.0-24-generic/arch/x86/include/generated",
+                "/usr/src/linux-headers-6.11.0-24-generic/include/uapi",
+                "/usr/src/linux-headers-6.11.0-24-generic/arch/x86/include/uapi",
+                "/usr/src/linux-headers-6.11.0-24-generic/include/generated/uapi",
+                "/usr/src/linux-headers-6.11.0-24-generic/arch/x86/include/generated/uapi"
             ],
-            "defines": [],
+            "defines": [
+                "__KERNEL__",
+                "MODULE",
+                "KBUILD_MODNAME=\"usb_driver\"",
+                "KBUILD_BASENAME=\"usb_driver\""
+            ],
             "compilerPath": "/usr/bin/gcc",
-            "intelliSenseMode": "gcc-x64",  // Adjust for your architecture
             "cStandard": "c11",
-            "cppStandard": "c++17"
+            "cppStandard": "c++17",
+            "intelliSenseMode": "linux-gcc-x64"
         }
     ],
     "version": 4
